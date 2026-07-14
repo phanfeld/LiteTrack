@@ -26,5 +26,8 @@ def parameters(yaml_name: str, run_epoch):
 
     # whether to save boxes from all queries
     params.save_all_boxes = False
+    
+    # Default debug mode
+    params.debug = 0
 
     return params
