@@ -10,7 +10,7 @@ https://github.com/facebookresearch/dino
 https://github.com/rwightman/pytorch-image-models/blob/master/timm/models/vision_transformer.py
 """
 
-import imp
+import importlib as imp
 import os
 import math
 import torch
