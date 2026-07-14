@@ -171,7 +171,7 @@ pytracking/evaluation/local.py
 pytracking/run_local.py
 output/
 output
-data/
+# data/   # see https://github.com/TsingWei/LiteTrack/issues/7
 tensorboard/
 pretrained_models/
 pretrained_models
