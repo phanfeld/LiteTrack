@@ -481,9 +481,17 @@ class VIT_Backbone(nn.Module):
                 param.requires_grad = False
 
     def forward_zx(self, z, x, target_token=None):
-        x = self.patch_embed(x)
+        # Embed x if it's a 4D tensor (not yet embedded)
+        if x.dim() == 4:
+            x = self.patch_embed(x)
         x += self.pos_embed_x
         x = self.pos_drop(x)
+
+        # Embed z if it's a 4D tensor (not yet embedded)
+        if z.dim() == 4:
+            z = self.patch_embed(z)
+        z += self.pos_embed_z
+        z = self.pos_drop(z)
 
         len_z = self.pos_embed_z.shape[1]
 
